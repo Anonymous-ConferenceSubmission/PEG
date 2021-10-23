@@ -29,6 +29,11 @@ PEG-LE+ using constant feature on cora
 python main.py --PE_method LE --dataset cora --feature_type C --random_partition
 ```
 
+For ogbl-ddi and ogbl-collab
+```bash
+cd OGB
+```
+
 ##### Task2
 ```bash
 cd task2
@@ -40,4 +45,8 @@ python main.py --PE_method DW --source_dataset cora --target_dataset citeseer --
 PEG-LE+ using constant feature on cora->citeseer
 ```bash
 python main.py --PE_method LE --source_dataset cora --target_dataset citeseer --feature_type C --random_partition
+```
+For PPI dataset
+```bash
+python PPI.py --PE_method LE --feature_type N
 ```
