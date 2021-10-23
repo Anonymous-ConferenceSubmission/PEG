@@ -68,6 +68,8 @@ def train_model(model, optimizer, x, edge_index, train_loader, val_loader, test_
             train_loss_history.append(loss_train)
             loss_train.backward()
             optimizer.step()
+            with torch.no_grad():
+                model.fc.weight[0][0].clamp_(1e-5,100)
 
             label_ids = label.to('cpu').numpy()
             y_label_train = y_label_train + label_ids.flatten().tolist()
